@@ -1,13 +1,223 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --font-s: 24px;
+  --font-m: 36px;
+  --font-l: 48px;
+  --bgcolor: #15202b;
+  --primarycolor: #f5f7f7;
+  --secondarycolor: #149eca;
+  --hovercolor: #00E8FF;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bgcolor);
+  color: var(--primarycolor);
+  font-size: var(--font-s);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+#header {
+  font-size: var(--font-l);
+}
+
+#settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.session-break {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dec-inc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
+  color: var(--secondarycolor);
+}
+
+.dec {
+  transition: 0.5s;
+  transition: 0.5s;
+  border: none;
+  background-color: var(--bgcolor);
+  color: var(--secondarycolor);
+  font-size: var(--font-s);
+}
+
+.dec:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  color: var(--hovercolor);
+}
+
+.inc {
+  transition: 0.5s;
+  border: none;
+  background-color: var(--bgcolor);
+  color: var(--secondarycolor);
+  font-size: var(--font-s);
+}
+
+.inc:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  color: var(--hovercolor);
+}
+
+#timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width: 250px;
+  height: 250px;
+  border: 1px solid var(--primarycolor);
+  border-radius: 50%;
+  font-size: var(--font-m);
+}
+
+#time-left {
+  font-size: var(--font-l);
+  font-weight: bold;
+}
+
+#controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 50px;
+  color: var(--secondarycolor);
+}
+
+#start_stop {
+  transition: 0.5s;
+  border: none;
+  background-color: var(--bgcolor);
+  color: var(--secondarycolor);
+  font-size: var(--font-s);
+}
+
+#start_stop:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  color: var(--hovercolor);
+}
+
+#reset {
+  transition: 0.5s;
+  border: none;
+  background-color: var(--bgcolor);
+  color: var(--secondarycolor);
+  font-size: var(--font-s);
+}
+
+#reset:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  color: var(--hovercolor);
+}
+
+@media only screen and (max-width: 350px) {
+  :root {
+    --font-s: 18px;
+    --font-m: 27px;
+    --font-l: 36px;
+  }
+
+  #clock {
+    gap: 15px
+  }
+
+  #settings {
+    gap: 15px;
+  }
+
+  #dec-inc {
+    gap: 10px;
+  }
+
+  #timer {
+    width: 200px;
+    height: 200px;
+  }
+
+  #controls {
+    gap: 15px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  :root {
+    --font-s: 16px;
+    --font-m: 24px;
+    --font-l: 32px;
+  }
+
+  #timer {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-height: 670px) {
+  :root {
+    --font-s: 18px;
+    --font-m: 27px;
+    --font-l: 36px;
+  }
+
+  #clock {
+    gap: 30px;
+  }
+}
+
+@media only screen and (max-height: 670px) {
+  :root {
+    --font-s: 16px;
+    --font-m: 24px;
+    --font-l: 32px;
+  }
+
+  #clock {
+    gap: 20px;
+  }
 }
